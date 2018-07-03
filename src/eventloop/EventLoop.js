@@ -21,9 +21,35 @@ class EventLoop extends Component{
             selector: (this.state.selector < -1) ? this.state.allProcess : this.state.selector - 1
         })
 
-        if(this.state.selector === 0) {
+        this.setMessage();
+        
+    }
+
+    setMessage () {
+        console.log(this.state.selector)
+        if(this.state.selector === -1) {
             this.setState({
                 message: '一个脚本是一个任务，当浏览器加载完脚本后，便将它添加至事件队列当中'
+            })
+        } else if (this.state.selector === 2){
+            this.setState({
+                message: '这里延迟时间会立即结束，于是乎浏览器的事件表将回调函数添加至事件队列中'
+            })
+        } else if (this.state.selector === 4) {
+            this.setState({
+                message: '这时当前脚本执行完毕，弹出执行栈'
+            })
+        } else if (this.state.selector === 5) {
+            this.setState({
+                message: '当执行栈为空时，便检查事件队列，如果不为空，则取出第一个任务执行'
+            })
+        } else if (this.state.selector === 8) {
+            this.setState({
+                message: '结束'
+            })
+        } else {
+            this.setState({
+                message: ''
             })
         }
     }
@@ -33,7 +59,7 @@ class EventLoop extends Component{
         this.setState({
             selector: (this.state.selector > this.state.allProcess) ? 0 : this.state.selector + 1
         })
-        
+        this.setMessage();
     }
 
     addContainer() {

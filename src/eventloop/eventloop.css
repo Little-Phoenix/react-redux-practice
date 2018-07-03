@@ -82,6 +82,21 @@
     font-size: 16px;
     line-height: 35px;
     color: #393939;
+    opacity: 0;
+}
+
+.item-transition {
+    transition: opacity 2s;
+}
+
+.fadein {
+    opacity: 100;
+    filter: alpha(opacity=100)
+}
+
+.fadeout {
+    opacity: 0;
+    filter: alpha(opacity=0)
 }
 
 .queue-highlighted {
@@ -94,16 +109,14 @@ span.selected {
 
 .alert-window {
     position: absolute;
-    display: none;
-    width: 400px;
+    width: 680px;
     height: 80px;
     padding: 10px;
     text-align: center;
     margin: auto;
     left: 0;
     right: 0;
-    top: 0;
-    bottom: 0;
+    bottom: 50px;
     background-color: #c9c9c9;
     border-radius: 10px;
 }
