@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import ClickCounter from './components/ClickCounter';
 import EventLoop from './eventloop/EventLoop';
 import MicroTask from './eventloop/MicroTask';
+import Worker from './eventloop/Worker'
 
 import {
     BrowserRouter as Router,
@@ -21,6 +22,7 @@ const BasicRoute = () => (
                 <li><Link to="/clickcounter">ClickCounter</Link></li>
                 <li><Link to="/eventloop">EventLoop</Link></li>
                 <li><Link to="/microTask">MicroTask</Link></li>
+                <li><Link to="/worker">Worker</Link></li>
                 <li><Link to="/app">App</Link></li>
             </ul>
 
@@ -29,6 +31,7 @@ const BasicRoute = () => (
             <Route exact path="/clickcounter" component={ ClickCounter }/>
             <Route path="/eventloop" component={ EventLoop } />
             <Route path="/microTask" component={ MicroTask } />
+            <Route path="/worker" component={ Worker } />
             <Route path="/app" component={ App }/>
         </div>
     </Router>
