@@ -11,9 +11,10 @@ class Worker extends Component {
     }
 
     componentDidMount() {
-        var worker = new Worker('computing.js');
-        console.log('worker', worker)
+        var worker = new Worker('http://localhost/computing.js');
+        
         worker.onmessage = function(event) {
+            console.log(event.data)
             this.setState({
                 message: event.data + '<br/>'
             })
