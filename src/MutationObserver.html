@@ -61,9 +61,11 @@
             }
 
             inner.addEventListener('click', onClick);
+            
             outer.addEventListener('click', onClick);
 
-
+            inner.click();
+            
 
             var callback = function(){
                 console.log("Dom changed");
